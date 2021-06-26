@@ -1,31 +1,28 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Hello World</title>
-  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-
-  <!-- Don't use this in production: -->
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
 </head>
 <body>
-<div id="root"></div>
-<!--<script type="text/babel">-->
+  <script type="module">
+    function getPopupCoords({width, height}) {
+      const left = window.screen.width / 2 - width / 2
+      const right = left + width
+      const top = window.screen.height / 2 - height / 2
+      const bottom = top + height
 
-<!--  ReactDOM.render(-->
-<!--    <h1>Hello, world!</h1>,-->
-<!--    document.getElementById('root')-->
-<!--  );-->
+      return {left, right, top, bottom}
+    }
 
-<!--</script>-->
-<script type="module">
-  import CryptoPayButton from "./dist/esm/dev.mjs";
+    const {top, left, bottom, right} = getPopupCoords({height: 400, width: 400})
 
-  ReactDOM.render(
-   React.createElement(CryptoPayButton, null),
-    document.getElementById('root')
-  )
-</script>
+    let params = `width=${400},height=${400},left=${left},top=${top}`;
+
+    open('/', 'test', params);
+  </script>
 </body>
 </html>

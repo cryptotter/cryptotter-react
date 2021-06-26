@@ -56,7 +56,7 @@ const config = [
   {
     input: join(__dirname, 'src/index.js'),
     output: {
-      file: join(__dirname, 'dist/esm/dev.mjs'),
+      file: join(__dirname, 'dist/esm/dev.js'),
       format: 'esm',
     },
     plugins: [
@@ -70,7 +70,7 @@ const config = [
   {
     input: join(__dirname, 'src/index.js'),
     output: {
-      file: join(__dirname, 'dist/esm/prod.mjs'),
+      file: join(__dirname, 'dist/esm/prod.js'),
       format: 'esm',
     },
     plugins: [

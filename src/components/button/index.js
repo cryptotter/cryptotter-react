@@ -7,13 +7,16 @@ function Button(props) {
     <button
       {...props}
       style={{
-        padding: '10px 20px',
+        padding: '8px 16px',
         cursor: 'pointer',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'blue',
+        backgroundColor: 'rgb(79, 70, 229)',
         color: 'white',
+        borderRadius: '5px',
+        outline: 'none',
+        border: 'none',
         ...props.style,
       }}
     >
