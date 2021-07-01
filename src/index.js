@@ -24,4 +24,5 @@ function CryptoPayButton(props) {
   return <Tab {...props} />;
 }
 
+export {CryptoPayButton};
 export default CryptoPayButton;
