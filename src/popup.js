@@ -14,6 +14,7 @@ function Popup(props) {
   const [transaction, setTransaction] = useState(null);
 
   return (
+    <a>
     <Button
       onClick={async () => {
         await props.onClick();
@@ -44,6 +45,7 @@ function Popup(props) {
     >
       {props.children}
     </Button>
+    </a>
   );
 }
 
