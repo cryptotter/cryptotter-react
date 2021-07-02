@@ -14,9 +14,12 @@ function Popup(props) {
   const [transaction, setTransaction] = useState(null);
 
   return (
-    <a>
-    <Button
-      onClick={async () => {
+    <a
+      href={`${props.payment}/${props.transaction}`}
+      target={'__blank'}
+      onClick={async (event) => {
+        event.preventDefault();
+
         await props.onClick();
         const popupSize = getPopupSizes({
           height: 400,
@@ -43,8 +46,7 @@ function Popup(props) {
         });
       }}
     >
-      {props.children}
-    </Button>
+      <Button>{props.children}</Button>
     </a>
   );
 }

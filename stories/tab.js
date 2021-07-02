@@ -22,24 +22,19 @@ export default {
 export const Src = (args) => (
   <SrcComponent {...args}>Pay with crypto</SrcComponent>
 );
-// Src.args = props;
 
 export const CjsDev = (args) => (
   <CjsDevComponent {...args}>Pay with crypto</CjsDevComponent>
 );
-// CjsDev.args = props;
 
 export const CjsProd = (args) => (
   <CjsProdComponent {...args}>Pay with crypto</CjsProdComponent>
 );
-// CjsProd.args = props;
 
 export const EsmDev = (args) => (
   <EsmDevComponent {...args}>Pay with crypto</EsmDevComponent>
 );
-// EsmDev.args = props;
 
 export const EsmProd = (args) => (
   <EsmProdComponent {...args}>Pay with crypto</EsmProdComponent>
 );
-// EsmProd.args = props;
