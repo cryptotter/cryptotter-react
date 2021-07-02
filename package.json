@@ -2,7 +2,6 @@
   "name": "@cryptotter/react",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c",
@@ -14,7 +13,21 @@
   "publishConfig": {
     "access": "public"
   },
-  "license": "ISC",
+  "main": "./dist/cjs/index.js",
+  "exports": {
+    "development": {
+      "import": "./dist/esm/dev.mjs",
+      "require": "./dist/cjs/dev.js"
+    },
+    "producton": {
+      "import": "./dist/esm/prod.mjs",
+      "require": "./dist/cjs/prod.js"
+    },
+    "import": "./dist/esm/prod.mjs",
+    "require": "./dist/cjs/prod.js",
+    "default": "./dist/cjs/prod.js"
+  },
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.14.6",
     "@babel/preset-react": "^7.14.5",
