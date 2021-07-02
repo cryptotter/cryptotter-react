@@ -2,7 +2,7 @@ import propsTypes from 'prop-types';
 import Tab from './tab';
 import Popup from './popup';
 
-CryptoPayButton.propTypes = {
+CryptotterButton.propTypes = {
   type: propsTypes.oneOf(['tab', 'window', 'frame']),
   onClick: propsTypes.func.isRequired,
   onSuccess: propsTypes.func.isRequired,
@@ -10,11 +10,11 @@ CryptoPayButton.propTypes = {
   payment: propsTypes.string.isRequired,
 };
 
-CryptoPayButton.defaultProps = {
+CryptotterButton.defaultProps = {
   payment: 'https://crypto-pay-payment.vercel.app',
 };
 
-function CryptoPayButton(props) {
+function CryptotterButton(props) {
   if (props.type === 'tab') {
     return <Tab {...props} />;
   } else if (props.type === 'window') {
@@ -24,5 +24,5 @@ function CryptoPayButton(props) {
   return <Tab {...props} />;
 }
 
-export {CryptoPayButton};
-export default CryptoPayButton;
+export {CryptotterButton};
+export default CryptotterButton;
