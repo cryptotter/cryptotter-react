@@ -20,7 +20,7 @@ function Tab(props) {
           return
         }
         const tabWindow = window.open(
-          `${props.payment}/${onClickResult.transaction ?? props.transaction}`,
+          `${props.payment}/${onClickResult?.transaction ?? props.transaction}`,
           '_blank'
         );
         tabWindow.focus();
