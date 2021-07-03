@@ -3,3 +3,4 @@ dist
 test
 .idea
 pubish.zsh
+storybook-static
