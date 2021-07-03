@@ -5,6 +5,7 @@ Button.propTypes = {};
 function Button(props) {
   return (
     <button
+      type={'button'}
       {...props}
       style={{
         padding: '8px 16px',
