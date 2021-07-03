@@ -1,19 +1,30 @@
 import PropTypes from 'prop-types';
-import {useState} from 'react';
+import {useMemo, useState} from 'react';
 import Button from './components/button/index.js';
 
 Tab.propTypes = {
   onClick: PropTypes.func.isRequired,
   onSuccess: PropTypes.func.isRequired,
   payment: PropTypes.string.isRequired,
-  host: PropTypes.string.isRequired,
+  transaction: PropTypes.string,
 };
 
 function Tab(props) {
   const [transaction, setTransaction] = useState(null);
 
+  const buttonTypeProps = useMemo(() => {
+    return props.transaction ? {
+      elementType: 'a',
+      href: `${props.payment}/${props.transaction}`,
+      target: '__blank'
+    }: {
+      elementType: 'div',
+    }
+  })
+
   return (
     <Button
+      {...buttonTypeProps}
       onClick={async () => {
         const onClickResult = await props.onClick();
         if (onClickResult === false) {

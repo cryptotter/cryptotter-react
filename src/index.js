@@ -3,6 +3,8 @@ import Tab from './tab';
 import Popup from './popup';
 
 CryptotterButton.propTypes = {
+  className: propsTypes.string,
+  style: propsTypes.object,
   type: propsTypes.oneOf(['tab', 'window', 'frame']),
   onClick: propsTypes.func.isRequired,
   onSuccess: propsTypes.func.isRequired,

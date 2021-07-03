@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import {useState} from 'react';
+import {useMemo, useState} from 'react';
 import Button from './components/button/index.js';
 import {getPopupSizes} from './utils/index.js';
 
@@ -7,16 +7,25 @@ Popup.propTypes = {
   onClick: PropTypes.func.isRequired,
   onSuccess: PropTypes.func.isRequired,
   payment: PropTypes.string.isRequired,
-  host: PropTypes.string.isRequired,
+  transaction: PropTypes.string.isRequired,
 };
 
 function Popup(props) {
   const [transaction, setTransaction] = useState(null);
 
+  const buttonTypeProps = useMemo(() => {
+    return props.transaction ? {
+      elementType: 'a',
+      href: `${props.payment}/${props.transaction}`,
+      target: '__blank'
+    }: {
+      elementType: 'div',
+    }
+  })
+
   return (
-    <a
-      href={`${props.payment}/${props.transaction}`}
-      target={'__blank'}
+    <Button
+      {...buttonTypeProps}
       onClick={async (event) => {
         event.preventDefault();
 
@@ -49,8 +58,8 @@ function Popup(props) {
         });
       }}
     >
-      <Button>{props.children}</Button>
-    </a>
+      {props.children}
+    </Button>
   );
 }
 
