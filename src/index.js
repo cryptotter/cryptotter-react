@@ -17,7 +17,7 @@ CryptotterButton.defaultProps = {
 function CryptotterButton(props) {
   if (props.type === 'tab') {
     return <Tab {...props} />;
-  } else if (props.type === 'window') {
+  } else if (props.type === 'popup') {
     return <Popup {...props} />;
   }
 

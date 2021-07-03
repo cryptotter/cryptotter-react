@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import {useState, useMemo} from 'react';
+import {useState} from 'react';
 import Button from './components/button/index.js';
 import {getPopupSizes} from './utils/index.js';
 
