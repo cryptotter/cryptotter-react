@@ -15,9 +15,9 @@ function Tab(props) {
   return (
     <Button
       onClick={async () => {
-        await props.onClick();
+        const onClickResult = await props.onClick();
         const tabWindow = window.open(
-          `${props.payment}/${props.transaction}`,
+          `${props.payment}/${onClickResult.transaction ?? props.transaction}`,
           '_blank'
         );
         tabWindow.focus();

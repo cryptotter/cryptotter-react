@@ -20,13 +20,13 @@ function Popup(props) {
       onClick={async (event) => {
         event.preventDefault();
 
-        await props.onClick();
+        const onClickResult =  await props.onClick();
         const popupSize = getPopupSizes({
           height: 400,
           width: 400,
         });
         const tabWindow = window.open(
-          `${props.payment}/${props.transaction}`,
+          `${props.payment}/${onClickResult?.transaction || props.transaction}`,
           '',
           `width=${popupSize.width},height=${popupSize.height},left=${popupSize.left},top=${popupSize.top}`
         );
