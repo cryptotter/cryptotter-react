@@ -21,6 +21,9 @@ function Popup(props) {
         event.preventDefault();
 
         const onClickResult =  await props.onClick();
+        if (onClickResult === false) {
+          return
+        }
         const popupSize = getPopupSizes({
           height: 400,
           width: 400,

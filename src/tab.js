@@ -16,6 +16,9 @@ function Tab(props) {
     <Button
       onClick={async () => {
         const onClickResult = await props.onClick();
+        if (onClickResult === false) {
+          return
+        }
         const tabWindow = window.open(
           `${props.payment}/${onClickResult.transaction ?? props.transaction}`,
           '_blank'
