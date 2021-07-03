@@ -7,9 +7,9 @@ import EsmDevComponent from '../dist/esm/dev';
 import EsmProdComponent from '../dist/esm/prod';
 
 const props = {
-  transaction: '12',
-  type: 'window',
-  payment: 'http://localhost:4001',
+  transaction: 'SET_TRANSACTION_ID',
+  type: 'popup',
+  payment: 'https://cryptotter-pay.vercel.app',
 };
 
 export default {

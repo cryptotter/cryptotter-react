@@ -5,7 +5,7 @@ import Popup from './popup';
 CryptotterButton.propTypes = {
   className: propsTypes.string,
   style: propsTypes.object,
-  type: propsTypes.oneOf(['tab', 'window', 'frame']),
+  type: propsTypes.oneOf(['tab', 'popup']),
   onClick: propsTypes.func.isRequired,
   onSuccess: propsTypes.func.isRequired,
   transaction: propsTypes.string.isRequired,
@@ -13,7 +13,7 @@ CryptotterButton.propTypes = {
 };
 
 CryptotterButton.defaultProps = {
-  payment: 'https://crypto-pay-payment.vercel.app',
+  payment: 'https://cryptotter-pay.vercel.app',
 };
 
 function CryptotterButton(props) {
