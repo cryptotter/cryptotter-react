@@ -13,7 +13,7 @@ CryptotterButton.propTypes = {
 };
 
 CryptotterButton.defaultProps = {
-  payment: 'https://cryptotter-pay.vercel.app',
+  payment: 'https://pay.cryptotter.tech',
 };
 
 function CryptotterButton(props) {
